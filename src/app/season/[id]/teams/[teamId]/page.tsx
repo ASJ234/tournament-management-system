@@ -36,9 +36,14 @@ export default async function TeamPage({ params }: Props) {
         subtitle={[group?.name, team.coach ? `Coach: ${team.coach}` : null].filter(Boolean).join(" · ") || undefined}
         back={{ href: `/season/${season.id}/teams`, label: "All teams" }}
         actions={
-          <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} target="_blank" rel="noopener">
-            📄 Fixtures (PDF)
-          </FileLinkButton>
+          <div className="flex flex-wrap gap-2">
+            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/team-sheet.pdf`} download>
+              ⬇️ Team sheet (PDF)
+            </FileLinkButton>
+            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} target="_blank" rel="noopener">
+              📄 Fixtures (PDF)
+            </FileLinkButton>
+          </div>
         }
       />
 

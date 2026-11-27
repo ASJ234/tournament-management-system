@@ -26,9 +26,14 @@ export default async function SquadPage({ params }: { params: Promise<{ id: stri
         subtitle={`${squad.length} player${squad.length === 1 ? "" : "s"} registered`}
         back={{ href: `/official/season/${season.id}`, label: "All teams" }}
         actions={
-          <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} target="_blank" rel="noopener">
-            📄 Fixtures (PDF)
-          </FileLinkButton>
+          <div className="flex flex-wrap gap-2">
+            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/team-sheet.pdf`} download>
+              ⬇️ Team sheet (PDF)
+            </FileLinkButton>
+            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} target="_blank" rel="noopener">
+              📄 Fixtures (PDF)
+            </FileLinkButton>
+          </div>
         }
       />
       <Section title="Coach" description="Shown on the team page. A card can be given to the coach when recording a match.">
