@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { MatchList } from "@/components/league";
-import { FileLinkButton } from "@/components/ui";
+import { DownloadButton } from "@/components/ui";
 import { getDb } from "@/lib/db";
 import { fixtureCount, listMatches } from "@/lib/matches";
 import { loadSeason } from "../data";
@@ -21,9 +21,9 @@ export default async function FixturesPage({ params }: Props) {
     <div className="space-y-4">
       {any && (
         <div className="flex justify-end">
-          <FileLinkButton href={`/season/${season.id}/fixtures.pdf`} download size="sm">
+          <DownloadButton href={`/season/${season.id}/fixtures.pdf`} size="sm">
             ⬇️ Fixtures by team (PDF)
-          </FileLinkButton>
+          </DownloadButton>
         </div>
       )}
       <MatchList

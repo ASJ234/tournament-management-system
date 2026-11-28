@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MatchList } from "@/components/league";
-import { Card, FileLinkButton, PageHeader } from "@/components/ui";
+import { Card, DownloadButton, PageHeader } from "@/components/ui";
 import { getDb } from "@/lib/db";
 import { getTeam, listGroups } from "@/lib/league";
 import { listMatches } from "@/lib/matches";
@@ -37,12 +37,12 @@ export default async function TeamPage({ params }: Props) {
         back={{ href: `/season/${season.id}/teams`, label: "All teams" }}
         actions={
           <div className="flex flex-wrap gap-2">
-            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/team-sheet.pdf`} download>
+            <DownloadButton href={`/season/${season.id}/teams/${team.id}/team-sheet.pdf`}>
               ⬇️ Team sheet (PDF)
-            </FileLinkButton>
-            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} download>
+            </DownloadButton>
+            <DownloadButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`}>
               ⬇️ Fixtures (PDF)
-            </FileLinkButton>
+            </DownloadButton>
           </div>
         }
       />

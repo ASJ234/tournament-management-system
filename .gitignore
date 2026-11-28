@@ -43,3 +43,6 @@ next-env.d.ts
 
 # league database
 /data/
+
+# written by `next dev`
+AGENTS.md
