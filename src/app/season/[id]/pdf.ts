@@ -44,7 +44,7 @@ export async function fixturesPdfResponse(seasonIdRaw: string, teamIdRaw?: strin
   return new Response(new Blob([bytes as BlobPart], { type: "application/pdf" }), {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `inline; filename="${name}"`,
+      "Content-Disposition": `attachment; filename="${name}"`,
       "Cache-Control": "no-store",
     },
   });
