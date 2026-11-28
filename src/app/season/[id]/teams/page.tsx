@@ -33,8 +33,8 @@ export default async function TeamsPage({ params }: Props) {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-muted">Open a team for its squad and matches, or download each team&apos;s fixtures.</p>
-        <FileLinkButton href={`/season/${season.id}/fixtures.pdf`} target="_blank" rel="noopener" size="sm">
-          📄 All teams&apos; fixtures (PDF)
+        <FileLinkButton href={`/season/${season.id}/fixtures.pdf`} download size="sm">
+          ⬇️ All teams&apos; fixtures (PDF)
         </FileLinkButton>
       </div>
       {sections.map((s) => (

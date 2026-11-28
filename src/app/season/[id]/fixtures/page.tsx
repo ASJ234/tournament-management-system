@@ -21,8 +21,8 @@ export default async function FixturesPage({ params }: Props) {
     <div className="space-y-4">
       {any && (
         <div className="flex justify-end">
-          <FileLinkButton href={`/season/${season.id}/fixtures.pdf`} target="_blank" rel="noopener" size="sm">
-            📄 Fixtures by team (PDF)
+          <FileLinkButton href={`/season/${season.id}/fixtures.pdf`} download size="sm">
+            ⬇️ Fixtures by team (PDF)
           </FileLinkButton>
         </div>
       )}

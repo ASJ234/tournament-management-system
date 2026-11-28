@@ -30,8 +30,8 @@ export default async function SquadPage({ params }: { params: Promise<{ id: stri
             <FileLinkButton href={`/season/${season.id}/teams/${team.id}/team-sheet.pdf`} download>
               ⬇️ Team sheet (PDF)
             </FileLinkButton>
-            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} target="_blank" rel="noopener">
-              📄 Fixtures (PDF)
+            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} download>
+              ⬇️ Fixtures (PDF)
             </FileLinkButton>
           </div>
         }
