@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { EmptyState, FileLinkButton } from "@/components/ui";
+import { EmptyState, DownloadButton } from "@/components/ui";
 import { getDb } from "@/lib/db";
 import { listGroups, listTeams } from "@/lib/league";
 import { countPlayersByTeam } from "@/lib/players";
@@ -33,9 +33,9 @@ export default async function TeamsPage({ params }: Props) {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-muted">Open a team for its squad and matches, or download each team&apos;s fixtures.</p>
-        <FileLinkButton href={`/season/${season.id}/fixtures.pdf`} download size="sm">
+        <DownloadButton href={`/season/${season.id}/fixtures.pdf`} size="sm">
           ⬇️ All teams&apos; fixtures (PDF)
-        </FileLinkButton>
+        </DownloadButton>
       </div>
       {sections.map((s) => (
         <section key={s.title ?? "all"}>

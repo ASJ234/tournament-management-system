@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { setTeamCoachAction } from "@/app/actions";
 import { ActionForm, SubmitButton } from "@/components/forms";
 import { AddPlayersForm, SquadEditor } from "@/components/official";
-import { Field, FileLinkButton, Input, PageHeader, Section } from "@/components/ui";
+import { Field, DownloadButton, Input, PageHeader, Section } from "@/components/ui";
 import { getDb } from "@/lib/db";
 import { getTeam } from "@/lib/league";
 import { squadWithStats } from "@/lib/players";
@@ -27,12 +27,12 @@ export default async function SquadPage({ params }: { params: Promise<{ id: stri
         back={{ href: `/official/season/${season.id}`, label: "All teams" }}
         actions={
           <div className="flex flex-wrap gap-2">
-            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/team-sheet.pdf`} download>
+            <DownloadButton href={`/season/${season.id}/teams/${team.id}/team-sheet.pdf`}>
               ⬇️ Team sheet (PDF)
-            </FileLinkButton>
-            <FileLinkButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`} download>
+            </DownloadButton>
+            <DownloadButton href={`/season/${season.id}/teams/${team.id}/fixtures.pdf`}>
               ⬇️ Fixtures (PDF)
-            </FileLinkButton>
+            </DownloadButton>
           </div>
         }
       />
